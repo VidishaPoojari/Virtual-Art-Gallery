@@ -15,7 +15,7 @@ A responsive web-based platform that allows students to digitally showcase their
 - **Commenting System**  
   Registered users can leave feedback or appreciation on individual artwork pages.
 
-- 📱 **Responsive Design**  
+- **Responsive Design**  
   Mobile-first layout ensures a smooth experience across devices.
 
 - **Secure Authentication**  
