@@ -33,7 +33,7 @@ A responsive web-based platform that allows students to digitally showcase their
 
 ---
 
-## 📋 System Overview
+## System Overview
 
 - **Frontend:** React + Vite (deployed via Vercel/Netlify)  
 - **Backend:** Node.js + Express (planned for future integration)  
