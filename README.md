@@ -2,6 +2,8 @@
 
 A responsive web-based platform that allows students to digitally showcase their artwork in an online gallery format. The system enables easy uploading, browsing, and commenting on various forms of student-created visual art — including paintings, digital illustrations, and photographs.
 
+**Live Demo:** [virtual-art-gallery-3aji75khy-vidishas-projects-d25355a8.vercel.app](https://virtual-art-gallery-3aji75khy-vidishas-projects-d25355a8.vercel.app)
+
 ---
 
 ## Features
@@ -25,27 +27,28 @@ A responsive web-based platform that allows students to digitally showcase their
 
 ## Built With
 
-- [React](https://reactjs.org/)  
-- [Vite](https://vitejs.dev/)  
-- [TypeScript](https://www.typescriptlang.org/)  
-- [Tailwind CSS](https://tailwindcss.com/)  
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
 
 ---
 
 ## System Overview
 
-- **Frontend:** React + Vite (deployed via Vercel/Netlify)  
-- **Backend:** Node.js + Express (planned for future integration)  
-- **Database:** MongoDB Atlas (to store artwork metadata and comments)  
-- **Image Hosting:** Firebase / Cloudinary  
-- **Security:** HTTPS, secure auth, basic content moderation
+- **Frontend**: React + Vite (deployed via Vercel)
+- **Backend**: Node.js + Express (integrated and deployed with frontend via Vercel)
+- **Database**: MongoDB Atlas (stores artwork metadata and comments)
+- **Image Hosting**: Firebase / Cloudinary
+- **Security**: HTTPS, encrypted auth, and basic content moderation
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js and npm installed
 
 ### Local Setup
