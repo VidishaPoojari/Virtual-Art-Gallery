@@ -1,69 +1,62 @@
-# Welcome to your Lovable project
+# Virtual Art Gallery for Student Exhibitions
 
-## Project info
+A responsive web-based platform that allows students to digitally showcase their artwork in an online gallery format. The system enables easy uploading, browsing, and commenting on various forms of student-created visual art — including paintings, digital illustrations, and photographs.
 
-**URL**: https://lovable.dev/projects/f2fa2ff2-3b26-4c3d-a3d7-56ab8e84c8df
+---
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Artwork Upload & Management**  
+  Students can upload artworks with title and description, edit them, and manage their gallery.
 
-**Use Lovable**
+- **Gallery Browsing**  
+  Visitors can explore artworks by category or use search and filter tools to find specific pieces.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f2fa2ff2-3b26-4c3d-a3d7-56ab8e84c8df) and start prompting.
+- **Commenting System**  
+  Registered users can leave feedback or appreciation on individual artwork pages.
 
-Changes made via Lovable will be committed automatically to this repo.
+- 📱 **Responsive Design**  
+  Mobile-first layout ensures a smooth experience across devices.
 
-**Use your preferred IDE**
+- **Secure Authentication**  
+  Users sign in via email/password with encrypted login.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Built With
 
-Follow these steps:
+- [React](https://reactjs.org/)  
+- [Vite](https://vitejs.dev/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [shadcn/ui](https://ui.shadcn.com/)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📋 System Overview
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Frontend:** React + Vite (deployed via Vercel/Netlify)  
+- **Backend:** Node.js + Express (planned for future integration)  
+- **Database:** MongoDB Atlas (to store artwork metadata and comments)  
+- **Image Hosting:** Firebase / Cloudinary  
+- **Security:** HTTPS, secure auth, basic content moderation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js and npm installed
+
+### Local Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/VidishaPoojari/Virtual-Art-Gallery.git
+cd Virtual-Art-Gallery
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f2fa2ff2-3b26-4c3d-a3d7-56ab8e84c8df) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
