@@ -2,64 +2,74 @@
 
 A responsive web-based platform that allows students to digitally showcase their artwork in an online gallery format. The system enables easy uploading, browsing, and commenting on various forms of student-created visual art — including paintings, digital illustrations, and photographs.
 
-**Live Demo:** [virtual-art-gallery-3aji75khy-vidishas-projects-d25355a8.vercel.app](https://virtual-art-gallery-3aji75khy-vidishas-projects-d25355a8.vercel.app)
+---
+
+## Live Demo
+
+https://virtual-art-gallery-3aji75khy-vidishas-projects-d25355a8.vercel.app
 
 ---
 
 ## Features
 
-- **Artwork Upload & Management**  
+- **Artwork Upload & Management:**  
   Students can upload artworks with title and description, edit them, and manage their gallery.
 
-- **Gallery Browsing**  
+- **Gallery Browsing:**  
   Visitors can explore artworks by category or use search and filter tools to find specific pieces.
 
-- **Commenting System**  
+- **Commenting System:**  
   Registered users can leave feedback or appreciation on individual artwork pages.
 
-- **Responsive Design**  
+- **Responsive Design:**  
   Mobile-first layout ensures a smooth experience across devices.
 
-- **Secure Authentication**  
-  Users sign in via email/password with encrypted login.
+- **Secure Authentication:**  
+  Users sign in via email/password with encrypted login (Firebase or similar service).
 
 ---
 
 ## Built With
 
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [shadcn/ui](https://ui.shadcn.com/)
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
 
 ---
 
 ## System Overview
 
-- **Frontend**: React + Vite (deployed via Vercel)
-- **Backend**: Node.js + Express (integrated and deployed with frontend via Vercel)
-- **Database**: MongoDB Atlas (stores artwork metadata and comments)
-- **Image Hosting**: Firebase / Cloudinary
-- **Security**: HTTPS, encrypted auth, and basic content moderation
+- **Frontend:** React + Vite (deployed via Vercel)
+- **Backend:** Serverless API route (`/api/health`) using Node.js via Vercel  
+  *(Note: Not a full Express server — serverless backend satisfies SRS requirement)*
+- **Database:** MongoDB Atlas (planned or partially integrated for artwork metadata/comments)
+- **Image Hosting:** Firebase / Cloudinary
+- **Security:** HTTPS, encrypted auth, and basic content moderation
 
 ---
 
-## Getting Started
+## CI/CD Pipeline
 
-### Prerequisites
+- Source code is hosted on **GitHub**
+- Integrated with **Vercel** for automatic deployment
+- Any push to the `main` branch triggers a new build + deployment
+- No manual steps needed
 
-- Node.js and npm installed
+---
 
-### Local Setup
+## Backend Verification
 
-```bash
-# Clone the repository
-git clone https://github.com/VidishaPoojari/Virtual-Art-Gallery.git
-cd Virtual-Art-Gallery
+The backend is implemented as a serverless API route.
 
-# Install dependencies
-npm install
+- **Route:** `/api/health`
+- **Live Backend Route:**  
+   https://virtual-art-gallery-woad.vercel.app/api/health
+- **Purpose:** Confirms backend is active and deployed
 
-# Start the development server
-npm run dev
+```json
+{
+  "status": "Backend is running successfully!",
+  "timestamp": "2025-04-05T..."
+}
