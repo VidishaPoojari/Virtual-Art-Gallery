@@ -1,75 +1,61 @@
-# Virtual Art Gallery for Student Exhibitions
+Virtual Art Gallery for Student Exhibitions
 
-A responsive web-based platform that allows students to digitally showcase their artwork in an online gallery format. The system enables easy uploading, browsing, and commenting on various forms of student-created visual art — including paintings, digital illustrations, and photographs.
+A responsive web-based platform that allows students to digitally showcase their artwork in an online gallery format. Users can upload, browse, and view various types of student-created visual art — such as paintings, digital illustrations, and photographs.
 
----
+⸻
 
-## Live Demo
+Live Demo
 
-https://virtual-art-gallery-3aji75khy-vidishas-projects-d25355a8.vercel.app
+https://virtual-art-gallery-woad.vercel.app
 
----
+⸻
 
-## Features
+Features
 
-- **Artwork Upload & Management:**  
-  Students can upload artworks with title and description, edit them, and manage their gallery.
+Artwork Upload & Management
+	•	Students can upload artworks with a title and description
+	•	Supports image preview and removal before uploading
 
-- **Gallery Browsing:**  
-  Visitors can explore artworks by category or use search and filter tools to find specific pieces.
+Gallery Browsing
+	•	View all uploaded artworks in a grid layout
+	•	Search artworks by title or artist name
+	•	Filter by category (Painting, Digital Art, Photography)
 
-- **Commenting System:**  
-  Registered users can leave feedback or appreciation on individual artwork pages.
+Commenting System (Mock Only)
+	•	Users can view a comment section under artworks
+	•	Currently uses mock data (real backend integration planned)
 
-- **Responsive Design:**  
-  Mobile-first layout ensures a smooth experience across devices.
+Responsive Design
+	•	Fully mobile-friendly and responsive UI
 
-- **Secure Authentication:**  
-  Users sign in via email/password with encrypted login (Firebase or similar service).
+Secure Authentication
+	•	Firebase Authentication used for email/password login
+	•	Passwords are encrypted and securely stored
 
----
+⸻
 
-## Built With
+Built With
+	•	React
+	•	Vite
+	•	TypeScript
+	•	Tailwind CSS
+	•	shadcn/ui
+	•	Firebase (Authentication)
 
-- React
-- Vite
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
+⸻
 
----
+System Overview
+	•	Frontend: React + Vite (deployed on Vercel)
+	•	Backend: No custom backend; logic handled on client-side
+	•	Auth: Firebase Authentication
+	•	Database: None (no real-time storage for comments/artwork yet)
+	•	Storage: Handled temporarily via local state; planned integration with Firebase or MongoDB
+	•	CI/CD: GitHub + Vercel (automatic build and deployment on every push to main)
 
-## System Overview
+⸻
 
-- **Frontend:** React + Vite (deployed via Vercel)
-- **Backend:** Serverless API route (`/api/health`) using Node.js via Vercel  
-  *(Note: Not a full Express server — serverless backend satisfies SRS requirement)*
-- **Database:** MongoDB Atlas (planned or partially integrated for artwork metadata/comments)
-- **Image Hosting:** Firebase / Cloudinary
-- **Security:** HTTPS, encrypted auth, and basic content moderation
-
----
-
-## CI/CD Pipeline
-
-- Source code is hosted on **GitHub**
-- Integrated with **Vercel** for automatic deployment
-- Any push to the `main` branch triggers a new build + deployment
-- No manual steps needed
-
----
-
-## Backend Verification
-
-The backend is implemented as a serverless API route.
-
-- **Route:** `/api/health`
-- **Live Backend Route:**  
-   https://virtual-art-gallery-woad.vercel.app/api/health
-- **Purpose:** Confirms backend is active and deployed
-
-```json
-{
-  "status": "Backend is running successfully!",
-  "timestamp": "2025-04-05T..."
-}
+CI/CD Pipeline
+	•	Source code hosted on GitHub
+	•	Connected to Vercel for automatic deployment
+	•	GitHub Actions workflow runs npm run build
+	•	No manual deployment steps required
