@@ -1,27 +1,194 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Virtual Art Gallery for Students</title>
     <meta name="description" content="A web-based platform that allows students to display their artwork in a digital space." />
     <meta name="author" content="Virtual Art Gallery" />
-
     <meta property="og:title" content="Virtual Art Gallery for Students" />
     <meta property="og:description" content="A web-based platform that allows students to display their artwork in a digital space." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        padding: 40px;
+      }
 
+      .container {
+        max-width: 420px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin-bottom: 16px;
+        color: #555;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 12px;
+        margin-bottom: 4px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+
+      .radio-group {
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      .radio-group label {
+        font-weight: normal;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      #inviteCodeSection {
+        display: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #6366f1;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 16px;
+      }
+
+      button:hover {
+        background: #4f46e5;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .footer a {
+        color: #6366f1;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="container">
+      <h2>Create an account</h2>
+      <p>Sign up to share and explore student artwork</p>
+
+      <form id="registrationForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required placeholder="John Doe" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="your.email@example.com" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required />
+
+        <div class="radio-group">
+          <label>I am registering as a:</label>
+          <label><input type="radio" name="role" value="student" checked /> Student Artist (I want to upload artwork)</label>
+          <label><input type="radio" name="role" value="visitor" /> Visitor (I want to browse and comment)</label>
+          <label><input type="radio" name="role" value="owner" /> Owner (Admin access to all data)</label>
+        </div>
+
+        <div id="inviteCodeSection">
+          <label for="inviteCode">Owner Invite Code</label>
+          <input type="text" id="inviteCode" placeholder="Enter invite code" />
+        </div>
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <div class="footer">
+        Already have an account? <a href="/login">Login</a>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById('registrationForm');
+      const inviteCodeSection = document.getElementById('inviteCodeSection');
+      const inviteCodeInput = document.getElementById('inviteCode');
+
+      document.querySelectorAll('input[name="role"]').forEach((radio) => {
+        radio.addEventListener('change', (e) => {
+          if (e.target.value === 'owner') {
+            inviteCodeSection.style.display = 'block';
+            inviteCodeInput.required = true;
+          } else {
+            inviteCodeSection.style.display = 'none';
+            inviteCodeInput.required = false;
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const role = document.querySelector('input[name="role"]:checked').value;
+        const inviteCode = inviteCodeInput.value.trim();
+
+        if (password !== confirmPassword) {
+          alert('Passwords do not match.');
+          return;
+        }
+
+        if (role === 'owner' && inviteCode !== 'SECRET123') {
+          alert('Invalid invite code for Owner access.');
+          return;
+        }
+
+        const userData = {
+          fullName,
+          email,
+          password,
+          role,
+          ...(role === 'owner' && { inviteCode }),
+        };
+
+        console.log('User registration data:', userData);
+        alert('Registration successful!');
+        // TODO: Send `userData` to your backend here
+      });
+    </script>
   </body>
 </html>
